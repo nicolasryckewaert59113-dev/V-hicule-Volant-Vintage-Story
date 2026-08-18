@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\src\Core\GridPos.cs" Link="Core\GridPos.cs" />
+    <Compile Include="..\..\src\Core\LocalPos.cs" Link="Core\LocalPos.cs" />
+    <Compile Include="..\..\src\Core\QuarterTurn.cs" Link="Core\QuarterTurn.cs" />
+    <Compile Include="..\..\src\Core\GlueBond.cs" Link="Core\GlueBond.cs" />
+    <Compile Include="..\..\src\Core\VehicleJson.cs" Link="Core\VehicleJson.cs" />
+    <Compile Include="..\..\src\Core\VehicleSnapshot.cs" Link="Core\VehicleSnapshot.cs" />
+    <Compile Include="..\..\src\Core\VehicleCollisionMath.cs" Link="Core\VehicleCollisionMath.cs" />
+    <Compile Include="..\..\src\Core\VehicleControlMath.cs" Link="Core\VehicleControlMath.cs" />
+    <Compile Include="..\..\src\Core\VehicleRiderMath.cs" Link="Core\VehicleRiderMath.cs" />
+    <Compile Include="..\..\src\Core\VehicleRiderInputState.cs" Link="Core\VehicleRiderInputState.cs" />
+    <Compile Include="..\..\src\Core\VehicleMaterializationGuard.cs" Link="Core\VehicleMaterializationGuard.cs" />
+    <Compile Include="..\..\src\Glue\GlueRegistry.cs" Link="Glue\GlueRegistry.cs" />
+  </ItemGroup>
+</Project>

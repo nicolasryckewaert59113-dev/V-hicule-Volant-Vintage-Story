@@ -1,0 +1,7 @@
+{
+  "code": "structureglue",
+  "class": "StructureGlue",
+  "creativeinventory": { "general": ["*"] },
+  "maxstacksize": 1,
+  "shape": { "base": "game:item/resin" }
+}

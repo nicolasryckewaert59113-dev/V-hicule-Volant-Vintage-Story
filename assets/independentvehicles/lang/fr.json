@@ -1,0 +1,8 @@
+{
+  "block-vehiclecontrolseat": "Siège de contrôle de véhicule",
+  "block-vehiclecontrolseat-*": "Siège de contrôle de véhicule",
+  "item-structureglue": "Colle de structure",
+  "itemdesc-structureglue": "Maintenez le clic droit et balayez des blocs voisins. Accroupissez-vous pendant le balayage pour retirer les liaisons.",
+  "item-creature-structure": "Structure mobile",
+  "entity-creature-structure": "Structure mobile"
+}

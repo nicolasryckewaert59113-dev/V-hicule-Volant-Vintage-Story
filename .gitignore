@@ -1,0 +1,8 @@
+bin/
+obj/
+dist/
+.api-audit/
+.server-test/
+.client-test/
+*.user
+*.zip

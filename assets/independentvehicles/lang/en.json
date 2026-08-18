@@ -1,0 +1,8 @@
+{
+  "block-vehiclecontrolseat": "Vehicle control seat",
+  "block-vehiclecontrolseat-*": "Vehicle control seat",
+  "item-structureglue": "Structure glue",
+  "itemdesc-structureglue": "Hold right click and sweep across neighboring blocks. Sneak while sweeping to remove bonds.",
+  "item-creature-structure": "Mobile structure",
+  "entity-creature-structure": "Mobile structure"
+}

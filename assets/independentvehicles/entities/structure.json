@@ -1,0 +1,13 @@
+{
+  "code": "structure",
+  "class": "IndependentVehicleStructure",
+  "tags": ["inanimate", "vehicle"],
+  "hitboxSize": { "x": 1, "y": 1, "z": 1 },
+  "client": {
+    "renderer": "IndependentVehicleStructureRenderer",
+    "behaviors": [
+      { "code": "interpolateposition" }
+    ]
+  },
+  "server": { "behaviors": [] }
+}
