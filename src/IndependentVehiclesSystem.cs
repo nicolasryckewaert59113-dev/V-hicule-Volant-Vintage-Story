@@ -19,6 +19,7 @@ namespace IndependentVehicles;
 
 public sealed class IndependentVehiclesSystem : ModSystem
 {
+    public const string ProductName = "Mobilis - Core";
     public const string Domain = "independentvehicles";
     public const string ModVersion = "0.5.0";
     public const string MountableClassName = "independentvehicles:structureseat";
@@ -54,7 +55,7 @@ public sealed class IndependentVehiclesSystem : ModSystem
     {
         sapi = api;
         api.Logger.Notification(
-            "[IndependentVehicles] Version {0} chargée — attachement conducteur virtuel, conduite serveur.",
+            "[Mobilis Core] Version {0} chargée — attachement conducteur virtuel, conduite serveur.",
             ModVersion);
         serverGlueChannel = api.Network
             .RegisterChannel(GlueNetworkChannel)
@@ -62,7 +63,7 @@ public sealed class IndependentVehiclesSystem : ModSystem
             .SetMessageHandler<GlueBrushPacket>(OnGlueBrushPacket);
         api.ChatCommands
             .Create("iv")
-            .WithDescription("Commandes de secours d’Independent Vehicles")
+            .WithDescription("Commandes de secours de Mobilis - Core")
             .RequiresPlayer()
             .BeginSubCommand("recover")
                 .WithDescription("Rematérialise la structure mobile inoccupée la plus proche")
@@ -169,7 +170,7 @@ public sealed class IndependentVehiclesSystem : ModSystem
         }
         catch (Exception error)
         {
-            sapi.Logger.Error("[IndependentVehicles] Capture de la structure refusée : {0}", error);
+            sapi.Logger.Error("[Mobilis Core] Capture de la structure refusée : {0}", error);
             Notify(player, $"Activation refusée : impossible de sauvegarder toutes les données ({error.Message}).");
             return;
         }
@@ -192,7 +193,7 @@ public sealed class IndependentVehiclesSystem : ModSystem
         }
         catch (Exception error)
         {
-            sapi.Logger.Error("[IndependentVehicles] Normalisation de la structure refusée : {0}", error);
+            sapi.Logger.Error("[Mobilis Core] Normalisation de la structure refusée : {0}", error);
             Notify(player, $"Activation refusée : un bloc à données ne peut pas être orienté proprement ({error.Message}).");
             return;
         }
@@ -237,10 +238,10 @@ public sealed class IndependentVehiclesSystem : ModSystem
                 throw new InvalidOperationException("Impossible d’asseoir le joueur sur la structure.");
 
             sapi.Logger.Audit(
-                "[IndependentVehicles] {0} monte sur la structure {1} à {2}; position joueur {3}.",
+                "[Mobilis Core] {0} monte sur la structure {1} à {2}; position joueur {3}.",
                 agent.GetName(), entity.EntityId, entity.Pos.AsBlockPos, agent.Pos.AsBlockPos);
 
-            Notify(player, $"Independent Vehicles {ModVersion} — structure mobile. L’avant est celui du siège ; accroupissez-vous pour l’arrêter.");
+            Notify(player, $"{ProductName} {ModVersion} — structure mobile. L’avant est celui du siège ; accroupissez-vous pour l’arrêter.");
         }
         catch (Exception error)
         {
@@ -260,12 +261,12 @@ public sealed class IndependentVehiclesSystem : ModSystem
             catch (Exception restoreError)
             {
                 sapi.Logger.Fatal(
-                    "[IndependentVehicles] Restauration d’activation incomplète; intervention requise : {0}",
+                    "[Mobilis Core] Restauration d’activation incomplète; intervention requise : {0}",
                     restoreError);
                 Notify(player, "ERREUR : la restauration complète des blocs à données a échoué. N’utilisez pas cette zone avant vérification du journal serveur.");
             }
             foreach (GlueBond bond in takenBonds) glue.Add(bond);
-            sapi.Logger.Error("[IndependentVehicles] Activation annulée : {0}", error);
+            sapi.Logger.Error("[Mobilis Core] Activation annulée : {0}", error);
             Notify(player, "Activation annulée : la plateforme a été restaurée.");
         }
     }
@@ -379,7 +380,7 @@ public sealed class IndependentVehiclesSystem : ModSystem
         if (entity.Snapshot is null)
         {
             CancelMaterialization(entity, rider);
-            sapi.Logger.Error("[IndependentVehicles] Rematérialisation annulée : snapshot absent pour l'entité {0}.", entity.EntityId);
+            sapi.Logger.Error("[Mobilis Core] Rematérialisation annulée : snapshot absent pour l'entité {0}.", entity.EntityId);
             return false;
         }
         entity.StopCompletely();
@@ -446,7 +447,7 @@ public sealed class IndependentVehiclesSystem : ModSystem
                 {
                     CancelMaterialization(entity, rider);
                     sapi.Logger.Error(
-                        "[IndependentVehicles] Données de {0} incompatibles avec la rematérialisation : {1}",
+                        "[Mobilis Core] Données de {0} incompatibles avec la rematérialisation : {1}",
                         entry.BlockCode,
                         error);
                     if (rider is EntityPlayer invalidEntity && invalidEntity.Player is IPlayer invalidPlayer)
@@ -500,7 +501,7 @@ public sealed class IndependentVehiclesSystem : ModSystem
                     sapi.World.BlockAccessor.SetBlock(0, pos);
             }
             CancelMaterialization(entity, rider);
-            sapi.Logger.Error("[IndependentVehicles] Rematérialisation annulée et restaurée : {0}", error);
+            sapi.Logger.Error("[Mobilis Core] Rematérialisation annulée et restaurée : {0}", error);
             if (rider is EntityPlayer failedPlayerEntity && failedPlayerEntity.Player is IPlayer failedPlayer)
                 Notify(failedPlayer, "Arrêt annulé : la pose des blocs a échoué. La structure mobile a été conservée.");
             return false;
@@ -510,7 +511,7 @@ public sealed class IndependentVehiclesSystem : ModSystem
         // l'entité. Un second événement de descente ne peut donc plus reposer les blocs.
         if (!entity.CompleteMaterialization())
         {
-            sapi.Logger.Error("[IndependentVehicles] État de rematérialisation incohérent pour l'entité {0}; les blocs ne seront pas posés une seconde fois.", entity.EntityId);
+            sapi.Logger.Error("[Mobilis Core] État de rematérialisation incohérent pour l'entité {0}; les blocs ne seront pas posés une seconde fois.", entity.EntityId);
             return false;
         }
 
@@ -521,7 +522,7 @@ public sealed class IndependentVehiclesSystem : ModSystem
         {
             rider.Pos.Motion.Set(0, 0, 0);
             sapi.Logger.Audit(
-                "[IndependentVehicles] Structure {0} rematérialisée à {1}; {2} reste en {3} sans téléportation.",
+                "[Mobilis Core] Structure {0} rematérialisée à {1}; {2} reste en {3} sans téléportation.",
                 entity.EntityId, anchor.ToBlockPos(), rider.GetName(), rider.Pos.AsBlockPos);
         }
         entity.Die(EnumDespawnReason.Removed);
@@ -560,7 +561,7 @@ public sealed class IndependentVehiclesSystem : ModSystem
             return TextCommandResult.Error("Cette commande doit être utilisée par un joueur.");
 
         if (player.Entity.MountedOn is not VehicleControlSeat)
-            return TextCommandResult.Error("Vous n'êtes pas monté sur un véhicule Independent Vehicles.");
+            return TextCommandResult.Error("Vous n'êtes pas monté sur un véhicule Mobilis - Core.");
 
         return player.Entity.TryUnmount()
             ? TextCommandResult.Success("Descente forcée côté serveur.")

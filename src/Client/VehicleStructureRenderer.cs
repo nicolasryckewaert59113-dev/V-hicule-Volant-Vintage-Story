@@ -85,7 +85,7 @@ public sealed class VehicleStructureRenderer : EntityRenderer
                 catch (Exception error)
                 {
                     capi.Logger.Warning(
-                        "[IndependentVehicles] Rendu mobile des données de {0} ignoré : {1}",
+                        "[Mobilis Core] Rendu mobile des données de {0} ignoré : {1}",
                         entry.BlockCode,
                         error.Message);
                 }
@@ -162,7 +162,7 @@ public sealed class VehicleStructureRenderer : EntityRenderer
                 catch (Exception error)
                 {
                     capi.Logger.Warning(
-                        "[IndependentVehicles] Nettoyage du rendu temporaire de {0} incomplet : {1}",
+                        "[Mobilis Core] Nettoyage du rendu temporaire de {0} incomplet : {1}",
                         entry.BlockCode,
                         error.Message);
                 }

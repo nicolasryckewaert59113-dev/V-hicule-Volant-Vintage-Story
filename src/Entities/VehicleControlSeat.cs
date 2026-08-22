@@ -87,7 +87,7 @@ public sealed class VehicleControlSeat : IMountableSeat
                 {
                     warnedUnsafeClientAnchor = true;
                     clientApi.Logger.Warning(
-                        "[IndependentVehicles] Ancre client dangereuse ignorée pour le véhicule {0}: joueur ({1:0.00}, {2:0.00}, {3:0.00}), ancre ({4:0.00}, {5:0.00}, {6:0.00}). Position actuelle conservée en attendant Vanilla.",
+                        "[Mobilis Core] Ancre client dangereuse ignorée pour le véhicule {0}: joueur ({1:0.00}, {2:0.00}, {3:0.00}), ancre ({4:0.00}, {5:0.00}, {6:0.00}). Position actuelle conservée en attendant Vanilla.",
                         vehicle.EntityId,
                         passenger.Pos.X,
                         passenger.Pos.Y,

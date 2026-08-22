@@ -6,8 +6,8 @@ param(
 $ErrorActionPreference = "Stop"
 
 $workspacePath = [IO.Path]::GetFullPath($PSScriptRoot)
-$stagingPath = [IO.Path]::GetFullPath((Join-Path $workspacePath "dist\IndependentVehicles-0.5.0"))
-$archivePath = [IO.Path]::GetFullPath((Join-Path $workspacePath "dist\IndependentVehicles-0.5.0.zip"))
+$stagingPath = [IO.Path]::GetFullPath((Join-Path $workspacePath "dist\Mobilis-Core-0.5.0"))
+$archivePath = [IO.Path]::GetFullPath((Join-Path $workspacePath "dist\Mobilis-Core-0.5.0.zip"))
 
 if (-not $stagingPath.StartsWith($workspacePath, [StringComparison]::OrdinalIgnoreCase)) {
     throw "Le dossier de préparation sort de l’espace de travail."

@@ -1,9 +1,9 @@
 {
   "type": "code",
   "modid": "independentvehicles",
-  "name": "Independent Vehicles Prototype",
+  "name": "Mobilis - Core",
   "authors": ["nicol", "Codex"],
-  "description": "Structures de blocs collés, y compris conteneurs et blocs ciselés, mobiles puis rematérialisées.",
+  "description": "Base open source pour créer des véhicules en blocs mobiles et rematérialisables.",
   "version": "0.5.0",
   "dependencies": {
     "game": "1.22.6",

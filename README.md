@@ -1,6 +1,8 @@
-# Independent Vehicles — prototype Vintage Story
+# Mobilis – Core
 
-Ce mod est une implémentation indépendante conçue de zéro. Il ne dépend pas de VSA Replica et n’en reprend pas le code.
+Mobilis – Core est la base open source de notre système de véhicules pour Vintage Story. Cette implémentation indépendante est conçue de zéro : elle ne dépend pas de VSA Replica et n’en reprend pas le code.
+
+Le dépôt est volontairement public sous licence MIT. Vous pouvez étudier, modifier, redistribuer ou utiliser cette base pour créer votre propre mod, à condition de conserver la notice de licence. Le futur mod **Mobilis** est un projet distinct développé dans un dépôt privé ; son contenu propre ne fait pas partie de Mobilis – Core.
 
 Le prototype valide une seule boucle : sélectionner des liaisons entre blocs vanilla, transformer la composante collée en une entité mobile unique, la conduire depuis un siège, puis la rematérialiser en vrais blocs fixes à la descente.
 
@@ -27,7 +29,7 @@ Les coffres doivent être fermés avant l'activation et leur contenu est volonta
 
 1. Installez Vintage Story 1.22.6 et le SDK .NET utilisé par cette installation (ici .NET 10).
 2. Exécutez `dotnet build src/IndependentVehicles.csproj`.
-3. Exécutez `./build.ps1` puis copiez `dist/IndependentVehicles-0.5.0.zip` dans le dossier `Mods` de Vintage Story.
+3. Exécutez `./build.ps1` puis copiez `dist/Mobilis-Core-0.5.0.zip` dans le dossier `Mods` de Vintage Story.
 4. En créatif, prenez « Colle de structure » et « Siège de contrôle de véhicule ».
 5. Construisez une petite plateforme de planches et posez le siège dessus.
 6. Prenez la colle : le groupe collé sous le viseur apparaît en cyan et le bloc visé en orange.
@@ -35,7 +37,7 @@ Les coffres doivent être fermés avant l'activation et leur contenu est volonta
 8. Rangez la colle, puis faites un clic droit sur le siège pour activer la plateforme.
 9. Utilisez les touches configurées pour avancer/reculer et gauche/droite. Accroupissez-vous pour descendre et figer la plateforme.
 
-Le dossier `Mods` ne doit contenir qu'une version d'Independent Vehicles. Le chat doit afficher `Independent Vehicles 0.5.0` lors de l'activation. Le dossier du siège indique l'avant du véhicule et cette direction reste mémorisée entre deux activations.
+Le dossier `Mods` ne doit contenir qu'une version de Mobilis – Core. Le chat doit afficher `Mobilis - Core 0.5.0` lors de l'activation. Le dossier du siège indique l'avant du véhicule et cette direction reste mémorisée entre deux activations.
 
 Pour le premier essai de la 0.5.0, utilisez d'abord un coffre vide, puis un coffre contenant un objet sans valeur, et conservez une sauvegarde du monde. Testez ensuite une rotation et une descente avant d'y placer des ressources importantes.
 

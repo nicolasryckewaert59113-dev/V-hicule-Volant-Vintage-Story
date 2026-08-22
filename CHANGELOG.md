@@ -1,5 +1,11 @@
 # Historique
 
+## Identité Mobilis – Core
+
+- la version 0.5.0 devient la base publique **Mobilis – Core** sous licence MIT ;
+- les identifiants techniques historiques restent inchangés afin de conserver la compatibilité avec les mondes Independent Vehicles existants ;
+- le futur mod **Mobilis** est développé séparément et n'est pas publié dans ce dépôt.
+
 ## 0.5.0
 
 - capture transactionnelle des `BlockEntity` avant le retrait du moindre bloc ;

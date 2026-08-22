@@ -223,7 +223,7 @@ public sealed class VehicleRiderAttachmentSystem : ModSystem
                 clientLastControlBits = 0;
                 clientLastSentMilliseconds = now;
                 capi.Logger.Warning(
-                    "[IndependentVehicles] État de siège incohérent pour le véhicule {0}; descente serveur sûre demandée sans correction de position client.",
+                    "[Mobilis Core] État de siège incohérent pour le véhicule {0}; descente serveur sûre demandée sans correction de position client.",
                     clientVehicleEntityId);
             }
 
@@ -472,7 +472,7 @@ public sealed class VehicleRiderAttachmentSystem : ModSystem
         {
             attachment.LastCorrectionWarningMilliseconds = now;
             sapi.Logger.Warning(
-                "[IndependentVehicles] Position Vanilla du conducteur {0} corrigée vers l’ancre du véhicule {1} (écart {2:0.00} blocs).",
+                "[Mobilis Core] Position Vanilla du conducteur {0} corrigée vers l’ancre du véhicule {1} (écart {2:0.00} blocs).",
                 rider.GetName(),
                 vehicle.EntityId,
                 Math.Sqrt(dx * dx + dy * dy + dz * dz));

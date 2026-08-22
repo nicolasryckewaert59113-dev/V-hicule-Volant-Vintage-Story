@@ -6,3 +6,6 @@ dist/
 .client-test/
 *.user
 *.zip
+*.log
+IndependentVehicles/
+.inspect-*/
